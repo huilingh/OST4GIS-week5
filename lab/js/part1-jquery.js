@@ -170,6 +170,49 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // This is a popular pattern that you'll run into in programs that run jQuery. It says not to run
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
+
 $(document).ready(function() {
   // Do your stuff here
-});
+  // Task 1
+  $('#main-heading').text('Personal Information')
+  $('#text-label1').text('Name')
+  $('#text-label2').text('Address')
+  $('#text-label3').text('Profession')
+  $('#number-label').text('Age')
+  $('#checkbox-label1').text('Male')
+  $('#checkbox-label2').text('Female')
+  $('#color-label').text('Hair Color')
+  // Task 2
+  $('#text-input1').val('Ling')
+  $('#text-input2').val('University of Pennsylvania')
+  $('#text-input3').val('Student')
+  $('#numeric-input').val('23')
+  $('#color-input').val('#9b3dd4')
+  // Task 3
+  var myObject = {
+    Name: $('#text-input1').val(),
+    Address: $('#text-input2').val(),
+    Profession: $('#text-input3').val(),
+    Age: $('#numeric-input').val(),
+    Gender: 'female',
+    HairColor: $('#color-input').val()
+  };
+  console.log(myObject);
+  // Task 4
+  $('#text-input1').prop('disabled', false)
+  $('#text-input2').prop('disabled', false)
+  $('#text-input3').prop('disabled', false)
+  $('#numeric-input').prop('disabled', false)
+  $('#cbox-input1').prop('disabled', false)
+  $('#cbox-input2').prop('disabled', false)
+  $('#cbox-input2').prop('checked', true)
+  $('#color-input').prop('disabled', false)
+  // Task 5
+  $('button').click(function() {console.log(myObject)})
+  // Task 6
+  var list = "<dl><dt>Name</dt>" + myObject.Name +
+             "<dt>Age</dt>" + myObject.Age +
+             "<dt>Profession</dt>" + myObject.Profession
+
+  $('button').click(function() {L.circleMarker([39.952661, -75.187360]).bindPopup(list).addTo(map);})
+  // Tasl 7
